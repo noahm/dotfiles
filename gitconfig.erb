@@ -1,0 +1,37 @@
+[user]
+  name = <%= print("Your Name: "); STDOUT.flush; STDIN.gets.chomp %>
+  email = <%= print("Your Email: "); STDOUT.flush; STDIN.gets.chomp %>
+
+[color]
+    ui = auto
+        
+[sendemail]
+    smtpuser = cehoffman
+    smtpserver = smtp.gmail.com
+    chainreplyto = false
+    smptencryption = tls
+[alias]
+    co = checkout
+    reup = pull --rebase
+    st = status --ignore-submodules=untracked
+    df = diff --ignore-submodules=untracked
+    ci = commit
+    br = branch
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+    unstage = reset HEAD --
+[core]
+    whitespace = trailing-space,space-before-tab
+    excludesfile = <%= ENV['HOME'] %>/.gitignore
+[apply]
+    whitespace= fix
+[merge]
+    conflictstyle = diff3
+    tool = textmate
+[merge "textmate"]
+    cmd = mate -w
+[clean]
+    requireForce = no
+[status]
+    submodulesummary = true
+[format]
+    pretty = %C(yellow)%h%Creset %s %C(red)(%cr)%Creset
