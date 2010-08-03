@@ -386,6 +386,7 @@ vnoremap X "_X
 noremap p p`[
 noremap P P`[
 
+<<<<<<< HEAD
 " Select just pasted text in last used visual mode
 nnoremap <expr> gp '`[' . visualmode() . '`]'
 
@@ -394,4 +395,11 @@ inoremap <C-l> <ESC>
 vnoremap <C-l> <ESC>
 snoremap <C-l> <ESC>
 onoremap <C-l> <ESC>
+
+if has("autocmd") && exists("+omnifunc")
+  autocmd Filetype *
+    \ if &omnifunc == "" |
+    \   setlocal omnifunc=syntaxcomplete#Complete |
+    \ endif
+endif
 
