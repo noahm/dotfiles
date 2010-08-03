@@ -386,7 +386,6 @@ vnoremap X "_X
 noremap p p`[
 noremap P P`[
 
-<<<<<<< HEAD
 " Select just pasted text in last used visual mode
 nnoremap <expr> gp '`[' . visualmode() . '`]'
 
