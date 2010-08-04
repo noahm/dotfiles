@@ -386,3 +386,12 @@ vnoremap X "_X
 noremap p p`[
 noremap P P`[
 
+" Select just pasted text in last used visual mode
+nnoremap <expr> gp '`[' . visualmode() . '`]'
+
+" Use ^L to exit insert or visual mode
+inoremap <C-l> <ESC>
+vnoremap <C-l> <ESC>
+snoremap <C-l> <ESC>
+onoremap <C-l> <ESC>
+
