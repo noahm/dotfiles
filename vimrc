@@ -412,9 +412,10 @@ set mouse=a
 nnoremap <Space> :exec "normal i".nr2char(getchar())."\e"<CR>
 
 " Make using lusty juggler and explorer a bit nicer
-nnoremap <Leader>j :LustyJuggler<CR>
-nnoremap <Leader>q :LustyBufferExplorer<CR>
+" nnoremap <Leader>j :LustyJuggler<CR>
+nnoremap <Leader>j :LustyBufferExplorer<CR>
 nnoremap <Leader>f :LustyFilesystemExplorerFromHere<CR>
+let g:loaded_lustyjuggler = 1
 
 " Find in NerdTree!
 nnoremap <silent> <Leader>r :NERDTreeFind<CR>
@@ -488,10 +489,9 @@ endfunction
 
 set tabline=%!TabLabel()
 
-if has("autocmd") && exists("+omnifunc")
-  autocmd Filetype *
-    \ if &omnifunc == "" |
-    \   setlocal omnifunc=syntaxcomplete#Complete |
-    \ endif
-endif
+" Make moving between windows easier
+noremap <C-j> <C-w>j
+noremap <C-h> <C-w>h
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
 
