@@ -1,12 +1,12 @@
 [submodule "vim/snippets"]
 	path = vim/snippets
-	url = git@github.com:cehoffman/snipmate-snippets.git
+	url = http://github.com/cehoffman/snipmate-snippets.git
 [submodule "vim/bundle/vim-nerdtree"]
 	path = vim/bundle/vim-nerdtree
 	url = http://github.com/scrooloose/nerdtree.git
 [submodule "vim/bundle/vim-nerd-commenter"]
 	path = vim/bundle/vim-nerd-commenter
-	url = git@github.com:cehoffman/nerdcommenter.git
+	url = http://github.com/cehoffman/nerdcommenter.git
 [submodule "vim/bundle/vim-ack"]
 	path = vim/bundle/vim-ack
 	url = http://github.com/mileszs/ack.vim.git
@@ -30,7 +30,7 @@
 	url = http://github.com/tpope/vim-markdown.git
 [submodule "vim/bundle/vim-ragtag"]
 	path = vim/bundle/vim-ragtag
-	url = git@github.com:cehoffman/vim-ragtag.git
+	url = http://github.com/cehoffman/vim-ragtag.git
 [submodule "vim/bundle/vim-rails"]
 	path = vim/bundle/vim-rails
 	url = http://github.com/cehoffman/vim-rails.git
@@ -39,7 +39,7 @@
 	url = http://github.com/cakebaker/scss-syntax.vim.git
 [submodule "vim/bundle/vim-snipmate"]
 	path = vim/bundle/vim-snipmate
-	url = git@github.com:cehoffman/snipmate.vim.git
+	url = http://github.com/cehoffman/snipmate.vim.git
 [submodule "vim/bundle/vim-supertab"]
 	path = vim/bundle/vim-supertab
 	url = http://github.com/ervandew/supertab.git
@@ -48,7 +48,7 @@
 	url = http://github.com/tpope/vim-surround.git
 [submodule "vim/bundle/vim-syntastic"]
 	path = vim/bundle/vim-syntastic
-	url = git@github.com:cehoffman/syntastic.git
+	url = http://github.com/cehoffman/syntastic.git
 [submodule "vim/bundle/vim-unimpaired"]
 	path = vim/bundle/vim-unimpaired
 	url = http://github.com/tpope/vim-unimpaired.git
