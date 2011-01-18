@@ -397,6 +397,7 @@ if has("gui_running")
     set enc=utf-8
   endif
 else
+  set t_Co=256
   " Workaround for making things like arrow keys work under screen
   if $TERM == 'screen*'
     set term=xterm

@@ -87,7 +87,7 @@ $console_extensions = []
 # output and history
 extend_console 'wirble' do
   Wirble.init
-  Wirble.colorize
+  # Wirble.colorize
 end
 
 # Hirb makes tables easy.
@@ -138,3 +138,9 @@ end
 
 # Show results of all extension-loading
 puts "#{ANSI[:GRAY]}~> Console extensions:#{ANSI[:RESET]} #{$console_extensions.join(' ')}#{ANSI[:RESET]}"
+
+# Make URL helpers available in the Rails console
+if defined? RAILS_ENV
+  include ActionController::UrlWriter
+  default_url_options[:host] = 'the-operative.local'
+end
