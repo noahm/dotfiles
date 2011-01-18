@@ -18,7 +18,7 @@ fi
 
 function __git_dirty {
   git diff --quiet HEAD &>/dev/null 
-  [ $? == 1 ] && echo "!"
+  [ $? == 1 ] && echo "✗"
 }
 
 function __git_branch {
@@ -46,6 +46,8 @@ bash_prompt() {
   local M="\[\033[0;35m\]"    # magenta
   local C="\[\033[0;36m\]"    # cyan
   local W="\[\033[0;37m\]"    # white
+  local PB="\[\033[38;5;75m\]"   # pale blue
+  local DB="\[\033[38;5;33m\]"   # darker blue
 
   # emphasized (bolded) colors
   local EMK="\[\033[1;30m\]"
@@ -70,7 +72,7 @@ bash_prompt() {
   local UC=$W                 # user's color
   [ $UID -eq "0" ] && UC=$R   # root's color
 
-  PS1="$EMB\$(__my_rvm_ruby_version)$Y\h$W:$EMY\w$EMW\$(__git_branch)$EMY\$(__git_dirty)${NONE} $ "
+  PS1="$EMB\$(__my_rvm_ruby_version)$PB\h$EMW:$DB\w$W\$(__git_branch)$EMR\$(__git_dirty)$W ➜$NONE "
 }
 
 bash_prompt
