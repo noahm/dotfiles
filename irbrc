@@ -142,5 +142,5 @@ puts "#{ANSI[:GRAY]}~> Console extensions:#{ANSI[:RESET]} #{$console_extensions.
 # Make URL helpers available in the Rails console
 if defined? RAILS_ENV
   include ActionController::UrlWriter
-  default_url_options[:host] = 'the-operative.local'
+  default_url_options[:host] = `hostname`.strip
 end
