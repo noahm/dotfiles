@@ -11,8 +11,9 @@
 [alias]
   co = checkout
   reup = pull --rebase
-  st = status --ignore-submodules=untracked
+  st = status --ignore-submodules=untracked -sb
   df = diff --ignore-submodules=untracked
+  dc = diff --cached --ignore-submodules=untracked
   ci = commit
   cp = cherry-pick
   br = branch
@@ -27,6 +28,7 @@
   requireForce = no
 [status]
   submodulesummary = true
+  relativePaths = false
 [format]
   pretty = %C(yellow)%h%Creset %s %C(red)(%cr)%Creset
 [branch]
@@ -35,3 +37,5 @@
   enabled = 1
 [help]
   autocorrect = 1
+[push]
+  default = tracking
