@@ -1,0 +1,54 @@
+% setup
+hg add n1
+hg commit -m 'add file'
+hg push
+hg add n2
+hg commit -m 'add another file'
+hg push --chunked
+hg add n3
+hg commit -m 'changeset 3'
+hg add n4
+hg commit -m 'changeset 4'
+hg add n5
+hg commit -m 'changeset 5'
+hg add n6
+hg commit -m 'changeset 6'
+hg add n7
+hg commit -m 'changeset 7'
+hg add n8
+hg commit -m 'changeset 8'
+hg add n9
+hg commit -m 'changeset 9'
+hg add n10
+hg commit -m 'changeset 10'
+hg add n11
+hg commit -m 'changeset 11'
+hg add n12
+hg commit -m 'changeset 12'
+hg add n13
+hg commit -m 'changeset 13'
+hg add n14
+hg commit -m 'changeset 14'
+hg add n15
+hg commit -m 'changeset 15'
+hg add n16
+hg commit -m 'changeset 16'
+hg add n17
+hg commit -m 'changeset 17'
+hg add n18
+hg commit -m 'changeset 18'
+hg add n19
+hg commit -m 'changeset 19'
+hg add n20
+hg commit -m 'changeset 20'
+hg add n21
+hg commit -m 'changeset 21'
+hg add n22
+hg commit -m 'changeset 22'
+hg add n23
+hg commit -m 'changeset 23'
+hg add n24
+hg commit -m 'changeset 24'
+hg push --chunked
+hg pull
+hg push

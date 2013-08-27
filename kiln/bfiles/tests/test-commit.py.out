@@ -1,0 +1,15 @@
+% test
+hg init
+hg add n1 dir/n2 dir/dir/n3
+hg add --bf b1 dir/b2 dir/dir/b3
+hg status
+hg commit -m adding .kbf/b1
+hg status
+hg commit -m adding n1 b1
+hg status
+hg commit -m adding dir/dir/n3 dir/dir/b3
+hg status
+hg commit -m adding dir/b2 dir/n2
+hg status
+hg status
+hg commit -m 'modifying b1'

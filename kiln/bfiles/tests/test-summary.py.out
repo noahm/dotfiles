@@ -1,0 +1,15 @@
+% setup
+hg init
+hg add n1 dir/n2
+hg add --bf
+hg commit -m 'add files'
+hg clone repo1 repo2
+hg commit -m 'edit files'
+
+% summary
+hg summary
+hg summary --bf
+hg summary --bf --remote
+hg summary
+hg summary --bf
+hg summary --bf --remote

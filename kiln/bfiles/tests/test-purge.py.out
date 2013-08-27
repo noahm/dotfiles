@@ -1,0 +1,11 @@
+% setup
+hg init
+hg add --bf b1
+hg add n1
+hg commit -m 'add some files'
+hg purge
+hg purge
+hg add --bf b2
+hg purge
+hg commit -m 'add another bfile'
+hg purge

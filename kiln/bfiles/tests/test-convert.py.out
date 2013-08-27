@@ -1,0 +1,27 @@
+% setup
+hg init
+hg add
+hg commit -m 'initial commit'
+hg add
+hg commit -m 'add more files'
+hg commit -m 'edit some files'
+hg mv z dir
+hg commit -m 'move files'
+hg rm dir/b
+hg commit -m 'remove some files'
+hg log
+hg kbfconvert -s 100 repo1 repo2
+hg log
+hg up
+hg kbfconvert repo1 repo3
+hg log
+hg up
+hg kbfconvert repo1 repo4 'glob:**'
+hg log
+hg up
+hg kbfconvert repo2 repo5 --tonormal
+hg up
+hg kbfconvert repo3 repo6 --tonormal
+hg up
+hg kbfconvert repo4 repo7 --tonormal
+hg up

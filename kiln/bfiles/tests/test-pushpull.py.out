@@ -1,0 +1,75 @@
+% setup
+hg init
+hg add --bf b1 dir/b2
+hg add n1 dir/n2
+hg commit -m 'added files'
+hg clone repo1 repo2
+
+% push and merge
+hg add --bf b3
+hg add n3
+hg commit -m 'changed and add'
+hg add --bf dir/b4
+hg add dir/n4
+hg commit -m 'changed and add'
+hg pull ../repo2
+hg merge
+hg commit -m merge
+hg push ../repo2
+
+% just push
+hg remove b3
+hg commit -m 'update files'
+hg push ../repo1
+hg add --bf 'glob:**.foo'
+hg commit -m 'add some files'
+hg status -A
+hg status -A
+hg push ../repo2
+
+% rename edit
+hg commit -m 'edit b2.foo and n1'
+hg rename dir/b2.foo dir/b2222.foo
+hg rename n1 n1111
+hg commit -m 'rename b2.foo and n1'
+hg pull ../repo1
+hg heads
+hg merge
+hg commit -m merge
+hg pull ../repo2
+hg up
+
+% both edit to same value
+hg commit -m 'change dir/b3.foo and n3' -d 2007-1-1
+hg commit -m 'change dir/b3.foo and n3' -d 2006-1-1
+hg pull ../repo2
+hg merge
+hg commit -m merge
+hg pull ../repo1
+hg up
+
+% delete edit
+hg rm dir/b3.foo n3
+hg commit -m 'remove dir/b3.foo and n3'
+hg commit -m 'edit dir/b3.foo and n3'
+hg pull ../repo1
+hg merge
+hg commit -m merge
+hg push ../repo1
+hg up
+
+% copy edit
+hg cp dir/b3.foo dir/b3333.foo
+hg cp n3 n3333
+hg commit -m 'copy dir/b3.foo and n3'
+hg commit -m 'edit dir/b3.foo and n3'
+hg pull ../repo1
+hg merge
+hg commit -m merge
+hg push ../repo1
+hg up
+
+% no default path error
+hg init
+hg pull ../repo1
+hg up

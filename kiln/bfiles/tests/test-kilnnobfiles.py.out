@@ -1,0 +1,9 @@
+% setup
+hg add n1 b/n2 b/c/n3 ../n4
+hg add --bf
+hg commit -m 'add files'
+hg push
+hg commit -m 'edit n1 and b1'
+
+% test with no bfiles
+hg push

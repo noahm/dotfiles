@@ -1,0 +1,10 @@
+% setup
+hg clone localkiln://Repo/Test/Test/Test repo1
+hg add n1 b/n2 b/c/n3 ../n4
+hg add --bf
+hg commit -m 'add files'
+hg push
+hg clone repo1 repo2
+hg commit -m 'edit files'
+hg out local://repo1/ --bf
+hg push local://repo1/

@@ -1,0 +1,21 @@
+% setup
+hg init -q
+hg add -q normal1 sub/normal2
+hg commit -m 'add normal files'
+
+% add bfiles
+hg add --bf big1 sub/big2
+hg status
+hg commit -m 'added bfiles'
+
+% edit big1
+hg status
+
+% edit sub/big2
+hg status
+
+% edit big1 back
+hg status
+
+% edit sub/big2 back
+hg status

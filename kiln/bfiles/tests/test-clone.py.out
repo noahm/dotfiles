@@ -1,0 +1,51 @@
+% setup
+hg init -q
+hg add -q normal1 sub/normal2 sub/normal3.txt sub/normal4.txt
+hg commit -m 'add normal files'
+
+% add bfiles
+hg add -q --bf big1 sub/big2 sub/big3.txt
+hg commit -m 'added bfiles'
+
+% edit files
+hg commit -m 'edited files'
+
+% clone to repo2
+hg clone repo1 repo2
+
+% update to rev 0 and check
+hg up -r 0
+hg up -r 0
+
+% update to rev 1 and check
+hg up -r 1
+hg up -r 1
+
+% update to rev 2 and check
+hg up -r 2
+hg up -r 2
+
+% clone to repo3
+hg clone -U repo2 repo3
+hg up
+
+% update to rev 0 and check
+hg up -r 0
+hg up -r 0
+
+% update to rev 1 and check
+hg up -r 1
+hg up -r 1
+
+% update to rev 2 and check
+hg up -r 2
+hg up -r 2
+hg cp sub dir
+hg cp dir dir2
+hg commit -m 'copy sub twice'
+
+% clone again
+hg clone repo3 repo4 -U
+hg up
+hg up -r 2
+hg up -r 2

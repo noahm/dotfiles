@@ -1,0 +1,11 @@
+tests/httpserver\.(log|pid)$
+
+syntax: glob
+*.pyc
+*.pyo
+*~
+.\#*
+*.swp
+tests/*.err
+tests/tmp/
+kiln_extensions.zip

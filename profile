@@ -1,7 +1,7 @@
-source $HOME/.homebrew/Library/Contributions/brew_bash_completion.sh
-source $HOME/.homebrew/etc/bash_completion.d/git-completion.bash
-source $HOME/.homebrew/etc/bash_completion.d/git-flow-completion.bash
-source $HOME/.homebrew/etc/bash_completion.d/npm-completion.sh
+# source $HOME/.homebrew/Library/Contributions/brew_bash_completion.sh
+source /usr/local/etc/bash_completion.d/git-completion.bash
+source /usr/local/etc/bash_completion.d/git-flow-completion.bash
+# source /usr/local/etc/bash_completion.d/npm-completion.sh
 
 PATH="$(python -c "from sys import prefix; print prefix")/bin:$HOME/.homebrew/share/npm/bin:$HOME/.homebrew/bin:$HOME/.homebrew/sbin:$PATH"
 export PATH

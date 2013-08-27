@@ -1,0 +1,33 @@
+% setup
+hg next
+hg init
+hg next
+hg next
+hg add n1 n2
+hg next
+hg commit -m 'add files'
+hg next
+hg push
+hg next
+hg next
+hg add n3 n4
+hg commit -m 'add more files'
+hg push
+hg next
+hg pull ../repo2
+hg next
+hg up
+hg next
+hg add n5
+hg commit -m 'add file to repo1'
+hg push
+hg add n6
+hg commit -m 'add file to repo2'
+hg pull ../repo1
+hg next
+hg merge
+hg commit -m merge
+hg push
+hg wtf
+hg overview
+hg advice

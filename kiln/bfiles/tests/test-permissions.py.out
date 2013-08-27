@@ -1,0 +1,10 @@
+% setup
+hg init
+hg add n1 dir/n2 dir/dir/n3
+hg add --bf b1 dir/b2 dir/dir/b3
+hg commit -m 'initial add'
+hg mv dir foo
+hg commit -m 'move files'
+hg commit -m 'change permissions'
+hg backout -r 2
+hg clone repo1 repo2

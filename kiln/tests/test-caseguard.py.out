@@ -1,0 +1,14 @@
+% setup
+hg init
+hg add abc
+hg casecheck
+hg add ABC
+hg add ABC -o
+hg add com1
+hg add com1 -o
+hg add 'a<b'
+hg add 'a<b' -o
+hg add -o Abc abC
+hg add -U ABc
+hg add -o aBC
+hg casecheck

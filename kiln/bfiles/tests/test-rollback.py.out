@@ -1,0 +1,20 @@
+% setup
+hg init -q
+hg add --bf b1
+hg commit -m 'add bfile'
+hg rollback
+hg status
+hg commit -m 'add bfile'
+hg add --bf b2
+hg commit -m 'add another bfile'
+hg rollback
+hg status
+hg commit -m 'add another bfile'
+hg commit -m 'modify bfile'
+hg rollback
+hg status
+hg commit -m 'modify bfile'
+hg rm b2
+hg commit -m 'delete bfile'
+hg rollback
+hg status
