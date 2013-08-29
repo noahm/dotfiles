@@ -2,8 +2,16 @@
 editor=subl -w
 username = Noah Manneschmidt <nmanneschmidt@Curse.com>
 
+[alias]
+st = status
+pu = pull -u
+lg = glog --template "\033[31m{node|short}\033[0m \033[1;34m<{author|person}>\033[0m \033[32m({date|age})\033[0m \n\t\t{desc}\n"
+df = diff
+
 [extensions]
 color =
+pager =
+graphlog =
 gestalt = ~/.kiln/gestalt.py
 kilnauth = ~/.kiln/kilnauth.py
 big-push = ~/.kiln/big-push.py
@@ -21,3 +29,7 @@ kiln = http://kiln.curse.us/Kiln/Repo
 [hostfingerprints]
 kiln.curse.us = 84:15:ce:9c:2e:28:96:d3:ed:1d:53:3a:1d:38:83:72:ea:c5:61:dc
 developers.kilnhg.com = c3:83:2c:5a:2d:01:81:5b:1a:61:7d:d9:7d:82:12:38:67:b1:ca:a8
+
+[pager]
+pager = LESS='FSRX' less
+attend = annotate, cat, diff, export, glog, log, qdiff, lg, df
