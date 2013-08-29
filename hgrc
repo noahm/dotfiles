@@ -7,6 +7,7 @@ st = status
 pu = pull -u
 lg = glog --template "\033[31m{node|short}\033[0m \033[1;34m<{author|person}>\033[0m \033[32m({date|age})\033[0m \n\t\t{desc}\n"
 df = diff
+ci = commit
 
 [extensions]
 color =
