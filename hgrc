@@ -12,13 +12,18 @@ ci = commit
 [extensions]
 color =
 pager =
+purge =
 graphlog =
+rebase =
 gestalt = ~/.kiln/gestalt.py
 kilnauth = ~/.kiln/kilnauth.py
 big-push = ~/.kiln/big-push.py
 kiln = ~/.kiln/kiln.py
 caseguard = ~/.kiln/caseguard.py
-kbfiles = ~/.kiln/bfiles/kbfiles
+
+[pager]
+pager = LESS='FSRX' less
+attend = annotate, cat, diff, export, glog, log, qdiff, lg, df
 
 [auth]
 kiln.prefix = kiln.curse.us
@@ -30,7 +35,4 @@ kiln = http://kiln.curse.us/Kiln/Repo
 [hostfingerprints]
 kiln.curse.us = 84:15:ce:9c:2e:28:96:d3:ed:1d:53:3a:1d:38:83:72:ea:c5:61:dc
 developers.kilnhg.com = c3:83:2c:5a:2d:01:81:5b:1a:61:7d:d9:7d:82:12:38:67:b1:ca:a8
-
-[pager]
-pager = LESS='FSRX' less
-attend = annotate, cat, diff, export, glog, log, qdiff, lg, df
+bitbucket.org = 24:9c:45:8b:9c:aa:ba:55:4e:01:6d:58:ff:e4:28:7d:2a:14:ae:3b
