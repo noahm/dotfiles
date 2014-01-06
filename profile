@@ -1,13 +1,20 @@
-# source $HOME/.homebrew/Library/Contributions/brew_bash_completion.sh
-source /usr/local/etc/bash_completion.d/git-completion.bash
-source /usr/local/etc/bash_completion.d/git-flow-completion.bash
-# source /usr/local/etc/bash_completion.d/npm-completion.sh
+source $HOME/.homebrew/Library/Contributions/brew_bash_completion.sh
+source $HOME/.homebrew/etc/bash_completion.d/git-completion.bash
+source $HOME/.homebrew/etc/bash_completion.d/git-flow-completion.bash
 
-PATH="$(python -c "from sys import prefix; print prefix")/bin:$HOME/.homebrew/share/npm/bin:$HOME/.homebrew/bin:$HOME/.homebrew/sbin:$PATH"
+PATH="$(python -c "from sys import prefix; print prefix")/bin:$HOME/.homebrew/bin:$HOME/.homebrew/sbin:$HOME/.pear/bin:$PATH"
 export PATH
 export EDITOR='mate -w'
 export GIT_EDITOR='mate -wl1'
 export LESSEDIT='mate -l %lm %f'
+export NODE_PATH='/Users/noah/.homebrew/lib/node_modules'
+
+# for amazon
+export JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Home"
+export EC2_PRIVATE_KEY="$(/bin/ls $HOME/.ec2/pk-*.pem)"
+export EC2_CERT="$(/bin/ls $HOME/.ec2/cert-*.pem)"
+export EC2_HOME="/Users/noah/.homebrew/Cellar/ec2-api-tools/1.4.4.2/jars"
+export AWS_RDS_HOME="/Users/noah/.homebrew/Cellar/rds-command-line-tools/1.3.003/jars"
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/.bin" ] ; then
@@ -77,3 +84,5 @@ bash_prompt() {
 
 bash_prompt
 unset bash_prompt
+
+[[ -s "/Users/noah/.rvm/scripts/rvm" ]] && source "/Users/noah/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

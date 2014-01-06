@@ -3,3 +3,4 @@
 .svn
 .*.sw[a-z]
 *.tmproj
+*.sublime-workspace
