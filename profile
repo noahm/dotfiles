@@ -1,5 +1,6 @@
 source $HOME/.homebrew/Library/Contributions/brew_bash_completion.sh
 source $HOME/.homebrew/etc/bash_completion.d/git-completion.bash
+source $HOME/.homebrew/etc/bash_completion.d/git-prompt.sh
 source $HOME/.homebrew/etc/bash_completion.d/git-flow-completion.bash
 
 PATH="$(python -c "from sys import prefix; print prefix")/bin:$HOME/.homebrew/bin:$HOME/.homebrew/sbin:$HOME/.pear/bin:$PATH"
