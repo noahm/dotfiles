@@ -3,7 +3,7 @@ source /usr/local/etc/bash_completion.d/git-completion.bash
 source /usr/local/etc/bash_completion.d/git-flow-completion.bash
 # source /usr/local/etc/bash_completion.d/npm-completion.sh
 
-PATH="$(python -c "from sys import prefix; print prefix")/bin:$HOME/.homebrew/share/npm/bin:$HOME/.homebrew/bin:$HOME/.homebrew/sbin:$PATH"
+# PATH="/bin:$HOME/.homebrew/share/npm/bin:$HOME/.homebrew/bin:$HOME/.homebrew/sbin:$PATH:/usr/local/share/python3.2"
 export PATH
 export EDITOR='mate -w'
 export GIT_EDITOR='mate -wl1'

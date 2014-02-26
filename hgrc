@@ -1,6 +1,7 @@
 [ui]
 editor=subl -w
 username = Noah Manneschmidt <nmanneschmidt@Curse.com>
+ignore = ~/.hgignore
 
 [alias]
 st = status
@@ -15,6 +16,8 @@ pager =
 purge =
 graphlog =
 rebase =
+record =
+shelve =
 gestalt = ~/.kiln/gestalt.py
 kilnauth = ~/.kiln/kilnauth.py
 big-push = ~/.kiln/big-push.py
