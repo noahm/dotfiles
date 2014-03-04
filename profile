@@ -1,6 +1,5 @@
 source $HOME/.homebrew/Library/Contributions/brew_bash_completion.sh
 source $HOME/.homebrew/etc/bash_completion.d/git-completion.bash
-source $HOME/.homebrew/etc/bash_completion.d/git-prompt.sh
 source $HOME/.homebrew/etc/bash_completion.d/git-flow-completion.bash
 
 PATH="$(python -c "from sys import prefix; print prefix")/bin:$HOME/.homebrew/bin:$HOME/.homebrew/sbin:$HOME/.pear/bin:$PATH"
@@ -21,8 +20,6 @@ export AWS_RDS_HOME="/Users/noah/.homebrew/Cellar/rds-command-line-tools/1.3.003
 if [ -d "$HOME/.bin" ] ; then
     PATH="$HOME/.bin:$PATH"
 fi
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
 function __git_dirty {
   git diff --quiet HEAD &>/dev/null 
