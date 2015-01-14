@@ -1,0 +1,6 @@
+URxvt.background: Black
+URxvt.foreground: White
+URxvt.font: xft:Source Code Pro:pixelsize=15
+URxvt.scrollBar: False
+URxvt.saveLines: 5000
+URxvt.termName: xterm-color
