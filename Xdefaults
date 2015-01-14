@@ -1,6 +1,32 @@
+! Perl extension list
+URxvt.perl-ext-common: default,matcher,clipboard
+
+! Clickable URLs
+! reference: https://heipei.net/2009/01/04/rxvt-unicode-906-with-256-colors-and-clickable-links/
+URxvt.urlLauncher: firefox
+URxvt.matcher.button: 1
+
+! Simple Copy/Paste
+! reference: http://www.linuxquestions.org/questions/slackware-14/rxvt-unicode-hacking-800818/page2.html
+URxvt.perl-lib: /home/nmanneschmidt/.dotfiles/urxvt/perl
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+
+! Disable unicode insertion features
+URxvt.iso14755: False
+
+! Basic styleing
 URxvt.background: Black
 URxvt.foreground: White
-URxvt.font: xft:Source Code Pro:pixelsize=15
+URxvt.font: xft:Source Code Pro:pixelsize=15:antialias=true:hinting=true
+URxvt.boldFont: xft:Source Code Pro:bold:pixelsize=15:antialias=true:hinting=true
 URxvt.scrollBar: False
 URxvt.saveLines: 5000
 URxvt.termName: xterm-color
+
+! Font smoothing options
+Xft.autohint: 0
+Xft.lcdfilter:  lcddefault
+Xft.hintstyle:  hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
