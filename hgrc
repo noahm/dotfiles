@@ -3,6 +3,16 @@ editor=subl -w
 username = Noah Manneschmidt <nmanneschmidt@Curse.com>
 ignore = ~/.hgignore
 
+[extdiff]
+cmd.interdiff = hg-interdiff
+cmd.opendiff = opendiff-w
+cmd.fmmerge = fmmerge
+
+[merge-tools]
+filemerge.executable = opendiff-w
+filemerge.args = $local $other -ancestor $base -merge $output
+fmmerge.args = $base $other $local $output
+
 [alias]
 st = status
 pu = pull -u
@@ -11,6 +21,7 @@ df = diff
 ci = commit
 
 [extensions]
+extdiff =
 color =
 pager =
 purge =
@@ -18,6 +29,7 @@ graphlog =
 rebase =
 record =
 shelve =
+strip =
 gestalt = ~/.kiln/gestalt.py
 kilnauth = ~/.kiln/kilnauth.py
 big-push = ~/.kiln/big-push.py
@@ -25,7 +37,7 @@ kiln = ~/.kiln/kiln.py
 caseguard = ~/.kiln/caseguard.py
 
 [pager]
-pager = LESS='FSRX' less
+pager = LESS='FRX' less
 attend = annotate, cat, diff, export, glog, log, qdiff, lg, df
 
 [auth]
@@ -36,6 +48,6 @@ kiln.username = CURSED\nmanneschmidt
 kiln = http://kiln.curse.us/Kiln/Repo
 
 [hostfingerprints]
-kiln.curse.us = 84:15:ce:9c:2e:28:96:d3:ed:1d:53:3a:1d:38:83:72:ea:c5:61:dc
+kiln.curse.us = 39:b8:2d:92:e4:ba:19:47:fd:6f:fc:dd:9d:b1:64:20:97:e8:0d:94
 developers.kilnhg.com = c3:83:2c:5a:2d:01:81:5b:1a:61:7d:d9:7d:82:12:38:67:b1:ca:a8
-bitbucket.org = 24:9c:45:8b:9c:aa:ba:55:4e:01:6d:58:ff:e4:28:7d:2a:14:ae:3b
+bitbucket.org = 45:ad:ae:1a:cf:0e:73:47:06:07:e0:88:f5:cc:10:e5:fa:1c:f7:99
