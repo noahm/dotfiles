@@ -1,6 +1,24 @@
 {
+	"always_show_minimap_viewport": true,
+	"binary_file_patterns":
+	[
+		"*.jpg",
+		"*.jpeg",
+		"*.png",
+		"*.gif",
+		"*.ttf",
+		"*.tga",
+		"*.dds",
+		"*.ico",
+		"*.eot",
+		"*.pdf",
+		"*.swf",
+		"*.jar",
+		"*.zip",
+		"*.ser"
+	],
 	"caret_style": "phase",
-	"color_scheme": "Packages/Color Scheme - Default/Sunburst.tmTheme",
+	"color_scheme": "Packages/User/Sunburst (SL).tmTheme",
 	"draw_minimap_border": true,
 	"draw_white_space": "all",
 	"fold_buttons": false,
