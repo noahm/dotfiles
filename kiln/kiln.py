@@ -1,4 +1,4 @@
-# Copyright (C) 2011-2013 Fog Creek Software.  All rights reserved.
+# Copyright (C) 2011-2014 Fog Creek Software.  All rights reserved.
 #
 # To enable the "kiln" extension put these lines in your ~/.hgrc:
 #  [extensions]
@@ -60,8 +60,15 @@ from mercurial.error import RepoError
 from mercurial.i18n import _
 from mercurial.node import nullrev
 
+# Mercurial pre-2.9
 try:
     from mercurial import scmutil
+except ImportError:
+    pass
+
+# Mercurial 2.9 - pathauditor moved from scmutil to pathutil
+try:
+    from mercurial import pathutil
 except ImportError:
     pass
 
@@ -425,6 +432,21 @@ def check_kilnauth_token(ui, url):
             if cookie.name == 'fbToken':
                 return cookie.value
 
+# Get the path auditor available for the current version of Mercurial.
+# Mercurial moved this class in versions 1.9 and 2.9.
+def build_audit_path(repo):
+    try:
+        # Mercurial 2.9
+        return pathutil.pathauditor(repo.root)
+    except ImportError:
+        try:
+            # Mercurial 1.9 to 2.9
+            return scmutil.pathauditor(repo.root)
+        except ImportError:
+            # Mercurial < 1.9
+            return getattr(repo.opener, 'audit_path', util.path_auditor(repo.root))
+
+
 
 def remember_path(ui, repo, path, value):
     '''appends the path to the working copy's hgrc and backs up the original'''
@@ -437,11 +459,7 @@ def remember_path(ui, repo, path, value):
     if re.search(r'[:=\s]', path):
         return
 
-    try:
-        audit_path = scmutil.pathauditor(repo.root)
-    except ImportError:
-        audit_path = getattr(repo.opener, 'audit_path', util.path_auditor(repo.root))
-
+    audit_path = build_audit_path(repo)
     audit_path('hgrc')
     audit_path('hgrc.backup')
     base = repo.opener.base
@@ -464,11 +482,7 @@ def remember_path(ui, repo, path, value):
 def unremember_path(ui, repo):
     '''restores the working copy's hgrc'''
 
-    try:
-        audit_path = scmutil.pathauditor(repo.root)
-    except ImportError:
-        audit_path = getattr(repo.opener, 'audit_path', util.path_auditor(repo.root))
-
+    audit_path = build_audit_path(repo)
     audit_path('hgrc')
     audit_path('hgrc.backup')
     base = repo.opener.base
@@ -601,10 +615,10 @@ def get_token(ui, url):
 
 def get_api_url(url):
     '''Given a URL, returns the URL of the Kiln installation.'''
-    if '/kiln/' in url.lower():
-        baseurl = url[:url.lower().find('/kiln/') + 6]
-    elif 'kilnhg.com/' in url.lower():
+    if 'kilnhg.com/' in url.lower():
         baseurl = url[:url.lower().find('kilnhg.com/') + 11]
+    elif '/kiln/' in url.lower():
+        baseurl = url[:url.lower().find('/kiln/') + 6]
     else:
         baseurl = url
     return baseurl
@@ -918,11 +932,11 @@ def kiln(ui, repo, **opts):
     if opts['annotate']:
         default = False
         for f in files('annotate'):
-            browse(urljoin(url, 'File', f) + '?view=annotate')
+            browse(urljoin(url, 'Files', f) + '?view=annotate')
     if opts['file']:
         default = False
         for f in files('file'):
-            browse(urljoin(url, 'File', f))
+            browse(urljoin(url, 'Files', f))
     if opts['filehistory']:
         default = False
         for f in files('filehistory'):
