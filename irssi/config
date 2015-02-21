@@ -289,6 +289,8 @@ settings = {
   "perl/core/scripts" = {
     neat_colors = "X60X2BX1IX5HX2ZX6WX4ZX3NX3PX4XX6LX3BX6JX6RX62X3CX2FX47X38X2JX2KX40XD6X19X29X34X36X1DX3LX17";
     neat_ignorechars = "_";
+    neat_color_menick = "yes";
+    neat_truncate_nick = "no";
   };
 };
 hilights = ( { text = "Cathadan"; nick = "yes"; word = "yes"; } );
