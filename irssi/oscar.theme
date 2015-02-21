@@ -115,6 +115,7 @@ formats = {
   };
   "Irssi::Script::nm2" = {
     neat_style = ", p , , , c , t , , , ";
+    neat_action_style = ", p , c , t , ";
     neat_pad_char = " ";
   };
 };
