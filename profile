@@ -1,12 +1,13 @@
-source /usr/local/Library/Contributions/brew_bash_completion.sh
-source /usr/local/etc/bash_completion.d/*
+source $HOME/.homebrew/Library/Contributions/brew_bash_completion.sh
+source $HOME/.homebrew/etc/bash_completion.d/*
 
-# PATH="$(python -c "from sys import prefix; print prefix")/bin:$HOME/.homebrew/bin:$HOME/.homebrew/sbin:$HOME/.pear/bin:$PATH"
-# export PATH
+#PATH="$(python -c "from sys import prefix; print prefix")/bin:$HOME/.homebrew/bin:$HOME/.homebrew/sbin:$HOME/.pear/bin:$PATH"
+PATH="/bin:$HOME/.homebrew/bin:$HOME/.homebrew/sbin:$HOME/.pear/bin:$PATH"
+export PATH
 export EDITOR='subl -w'
 export GIT_EDITOR='subl -nw'
 export LESSEDIT='mate -l %lm %f'
-# export NODE_PATH='/Users/noah/.homebrew/lib/node_modules'
+export NODE_PATH='/Users/noah/.homebrew/lib/node_modules'
 
 # for amazon
 export JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Home"
