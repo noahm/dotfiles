@@ -1,5 +1,5 @@
 #PATH="$(python -c "from sys import prefix; print prefix")/bin:$HOME/.homebrew/bin:$HOME/.homebrew/sbin:$HOME/.pear/bin:$PATH"
-export PATH="/bin:$HOME/.homebrew/bin:$HOME/.homebrew/sbin:$HOME/.pear/bin:$PATH"
+export PATH="/usr/local/sbin:$HOME/.pear/bin:$PATH"
 export EDITOR='subl -w'
 export GIT_EDITOR='subl -nw'
 export LESSEDIT='mate -l %lm %f'
@@ -15,7 +15,7 @@ export PHP_ENV=development
 export GPG_TTY=$(tty)
 
 ### Auto completion support ###
-source $HOME/.homebrew/etc/bash_completion*
+source /usr/local/etc/bash_completion
 
 ### convenience stuff ###
 
