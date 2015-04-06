@@ -1,27 +1,28 @@
-source $HOME/.homebrew/Library/Contributions/brew_bash_completion.sh
-source $HOME/.homebrew/etc/bash_completion.d/*
-
 #PATH="$(python -c "from sys import prefix; print prefix")/bin:$HOME/.homebrew/bin:$HOME/.homebrew/sbin:$HOME/.pear/bin:$PATH"
-PATH="/bin:$HOME/.homebrew/bin:$HOME/.homebrew/sbin:$HOME/.pear/bin:$PATH"
-export PATH
+export PATH="/bin:$HOME/.homebrew/bin:$HOME/.homebrew/sbin:$HOME/.pear/bin:$PATH"
 export EDITOR='subl -w'
 export GIT_EDITOR='subl -nw'
 export LESSEDIT='mate -l %lm %f'
 export NODE_PATH='/Users/noah/.homebrew/lib/node_modules'
-
-# for amazon
-export JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Home"
-export PHP_ENV=development
-
 export HOMEBREW_GITHUB_API_TOKEN=ef0bc9f527a1676580c9bbabb6d950cdb55b471d
 
+export JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Home"
+
+### For development ###
+export PHP_ENV=development
+
+### For keybase ###
 export GPG_TTY=$(tty)
+
+### Auto completion support ###
+source $HOME/.homebrew/etc/bash_completion*
 
 ### convenience stuff ###
 
 # Dev SSH Shell: shortcut to open a remote tmux session
 function dsh {
-  ssh $1 -t "tmux attach || tmux"
+  scp ~/.tmux.conf $1: # copy the local config file up
+  ssh $1 -t "tmux attach || tmux" # start ssh by connecting to an existing tmux sesson or creating a new one if none exist
 }
 
 # set PATH so it includes user's private bin if it exists
@@ -29,8 +30,9 @@ if [ -d "$HOME/.bin" ] ; then
     PATH="$HOME/.bin:$PATH"
 fi
 
+### Custom prompt stuff ###
 function __git_dirty {
-  git diff --quiet HEAD &>/dev/null 
+  git diff --quiet HEAD &>/dev/null
   [ $? == 1 ] && echo "✗"
 }
 
@@ -85,10 +87,11 @@ bash_prompt() {
   local UC=$W                 # user's color
   [ $UID -eq "0" ] && UC=$R   # root's color
 
-  PS1="$EMB\$(__my_rvm_ruby_version)$PB\h$EMW:$DB\w$W\$(__git_branch)$EMR\$(__git_dirty)$W ➜$NONE "
+  # PS1="$EMB\$(__my_rvm_ruby_version)$PB\h$EMW:$DB\w$W\$(__git_branch)$EMR\$(__git_dirty)$W ➜$NONE "
+  PS1="$PB\h$EMW:$DB\w$W\$(__git_branch)$EMR\$(__git_dirty)$W ➜$NONE "
 }
 
 bash_prompt
 unset bash_prompt
 
-[[ -s "/Users/noah/.rvm/scripts/rvm" ]] && source "/Users/noah/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+# [[ -s "/Users/noah/.rvm/scripts/rvm" ]] && source "/Users/noah/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
