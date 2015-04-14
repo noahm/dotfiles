@@ -21,7 +21,7 @@ source /usr/local/etc/bash_completion
 
 # Dev SSH Shell: shortcut to open a remote tmux session
 function dsh {
-  scp ~/.tmux.conf $1: # copy the local config file up
+  scp -q ~/.tmux.conf $1: # copy the local config file up
   ssh $1 -t "tmux attach || tmux" # start ssh by connecting to an existing tmux sesson or creating a new one if none exist
 }
 
