@@ -16,13 +16,17 @@ export HOMEBREW_GITHUB_API_TOKEN=ef0bc9f527a1676580c9bbabb6d950cdb55b471d
 
 export GPG_TTY=$(tty)
 
+if [ -f "${HOME}/.bash_aliases" ]; then
+  source "${HOME}/.bash_aliases"
+fi
+
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/.bin" ] ; then
-    PATH="$HOME/.bin:$PATH"
+  PATH="$HOME/.bin:$PATH"
 fi
 
 function __git_dirty {
-  git diff --quiet HEAD &>/dev/null 
+  git diff --quiet HEAD &>/dev/null
   [ $? == 1 ] && echo "✗"
 }
 
