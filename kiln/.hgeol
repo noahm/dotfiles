@@ -1,6 +1,0 @@
-[patterns]
-**.py = native
-**.py.out = native
-
-[repository]
-native = LF
