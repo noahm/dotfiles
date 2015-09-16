@@ -3,7 +3,6 @@ tags-ja
 vim/swap/*
 vim/undo/*
 vim/.netrwhist
-gitconfig
 weechat/logs
 weechat/xfer
 weechat/*.log

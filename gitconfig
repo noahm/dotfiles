@@ -1,13 +1,8 @@
 [user]
-  name = <%= print("Your Name: "); STDOUT.flush; STDIN.gets.chomp %>
-  email = <%= print("Your Email: "); STDOUT.flush; STDIN.gets.chomp %>
+  name = Noah Manneschmidt
+  email = nmanneschmidt@curse.com
 [color]
   ui = auto
-[sendemail]
-  smtpuser = <%= print("Your Gmail Prefix: "); STDOUT.flush; STDIN.gets.chomp %>
-  smtpserver = smtp.gmail.com
-  chainreplyto = false
-  smptencryption = tls
 [alias]
   co = checkout
   reup = pull --rebase
@@ -19,9 +14,10 @@
   br = branch
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
   unstage = reset HEAD --
+  last-log = log --pretty -n1
 [core]
   whitespace = trailing-space,space-before-tab,-blank-at-eof
-  excludesfile = <%= ENV['HOME'] %>/.gitignore
+  excludesfile = ~/.gitignore
 [apply]
   whitespace= fix
 [clean]
@@ -37,5 +33,7 @@
   enabled = 1
 [help]
   autocorrect = 1
+[http]
+  sslCAPath = ~/.gitcerts/
 [push]
-  default = tracking
+  default = simple
