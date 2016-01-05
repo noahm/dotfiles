@@ -1,10 +1,9 @@
 #PATH="$(python -c "from sys import prefix; print prefix")/bin:$HOME/.homebrew/bin:$HOME/.homebrew/sbin:$HOME/.pear/bin:$PATH"
-export PATH="/usr/local/sbin:$HOME/.pear/bin:$PATH"
+export PATH="/usr/local/sbin:$HOME/.pear/bin:/usr/local/lib/node_modules:$PATH"
 export EDITOR='subl -w'
 export GIT_EDITOR='subl -nw'
 export LESSEDIT='mate -l %lm %f'
 export NODE_PATH='/Users/noah/.homebrew/lib/node_modules'
-export HOMEBREW_GITHUB_API_TOKEN=ef0bc9f527a1676580c9bbabb6d950cdb55b471d
 
 export JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Home"
 
@@ -97,5 +96,10 @@ bash_prompt() {
 
 bash_prompt
 unset bash_prompt
+
+# if [ -f "$(brew --prefix bash-git-prompt)/share/gitprompt.sh" ]; then
+#   GIT_PROMPT_THEME=Default
+#   source "$(brew --prefix bash-git-prompt)/share/gitprompt.sh"
+# fi
 
 # [[ -s "/Users/noah/.rvm/scripts/rvm" ]] && source "/Users/noah/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
