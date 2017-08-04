@@ -1,5 +1,5 @@
-#PATH="$(python -c "from sys import prefix; print prefix")/bin:$HOME/.homebrew/bin:$HOME/.homebrew/sbin:$HOME/.pear/bin:$PATH"
-export PATH="/usr/local/sbin:$HOME/.pear/bin:/usr/local/lib/node_modules:$PATH"
+PATH="$(python -c "from sys import prefix; print prefix")/bin:$HOME/.homebrew/bin:$HOME/.homebrew/sbin:$HOME/.pear/bin:$PATH"
+#export PATH="/usr/local/sbin:$HOME/.pear/bin:/usr/local/lib/node_modules:$PATH"
 export EDITOR='subl -w'
 export GIT_EDITOR='subl -nw'
 export LESSEDIT='mate -l %lm %f'
@@ -18,7 +18,7 @@ if [ -f "${HOME}/.bash_aliases" ]; then
 fi
 
 ### Auto completion support ###
-source /usr/local/etc/bash_completion
+source $HOME/.homebrew/etc/bash_completion
 
 ### convenience stuff ###
 
