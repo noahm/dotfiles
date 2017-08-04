@@ -1,0 +1,18 @@
+{
+    "editor.renderWhitespace": "boundary",
+    "git.confirmSync": false,
+    "editor.fontFamily": "'Source Code Pro', Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontSize": 13,
+    "editor.cursorBlinking": "phase",
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "workbench.quickOpen.closeOnFocusLost": false,
+    "explorer.openEditors.visible": 0,
+    "window.zoomLevel": 0,
+    "workbench.iconTheme": "vs-seti",
+    "editor.minimap.enabled": true,
+    "typescript.check.tscVersion": false,
+    "editor.dragAndDrop": true,
+    "git.enableSmartCommit": true,
+    "editor.minimap.showSlider": "always",
+    "gitlens.blame.line.enabled": false
+}
