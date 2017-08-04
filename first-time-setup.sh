@@ -1,8 +1,10 @@
 # install X-code command line tools to make git available first
+cd ~
 
 sudo xcodebuild -license
 
 git clone https://github.com/Homebrew/brew.git .homebrew
+PATH="$HOME/.homebrew/bin:$PATH" # temp bootstrap for running homebrew ASAP
 
 # brew cask install firefox
 brew cask install 1password
@@ -34,3 +36,12 @@ brew cask install twitch
 brew cask install charles
 brew cask install obs
 
+# TODO copy these files to the appropriate places in the filesystem
+cat ~/.dotfiles/Preferences.sublime-settings | pbcopy 
+# open sublime, paste in preferences
+
+cat ~/.dotfiles/vscode-settings.json | pbcopy
+# open vscode, paste in settings
+
+# TODO automate installation of package control in sublime and preferred packages?
+# TODO automate installation of favorite VS Code extensions?
