@@ -1,6 +1,7 @@
 [user]
   name = Noah Manneschmidt
   email = nmannesc@twitch.tv
+  signingkey = nmannesc@twitch.tv
 [color]
   ui = auto
 [alias]
@@ -12,7 +13,7 @@
   ci = commit
   cp = cherry-pick
   br = branch
-  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+  lg = log --graph --pretty=format:'%Cred%h%Creset %C(cyan dim)%G?%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
   unstage = reset HEAD --
   last-log = log --pretty -n1
 [core]
@@ -37,3 +38,5 @@
   sslCAPath = ~/.gitcerts/
 [push]
   default = simple
+[commit]
+  gpgsign = true

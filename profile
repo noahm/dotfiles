@@ -1,7 +1,7 @@
 PATH="$(python -c "from sys import prefix; print prefix")/bin:$HOME/.homebrew/bin:$HOME/.homebrew/sbin:$HOME/.pear/bin:$PATH"
 #export PATH="/usr/local/sbin:$HOME/.pear/bin:/usr/local/lib/node_modules:$PATH"
-export EDITOR='subl -w'
-export GIT_EDITOR='subl -nw'
+export EDITOR='code -w'
+export GIT_EDITOR='code -nw'
 export LESSEDIT='mate -l %lm %f'
 export NODE_PATH='/Users/noah/.homebrew/lib/node_modules'
 

@@ -10,9 +10,101 @@
     "window.zoomLevel": 0,
     "workbench.iconTheme": "vs-seti",
     "editor.minimap.enabled": true,
-    "typescript.check.tscVersion": false,
     "editor.dragAndDrop": true,
     "git.enableSmartCommit": true,
     "editor.minimap.showSlider": "always",
-    "gitlens.blame.line.enabled": false
+    "typescript.npm": "/Users/nmannesc/.homebrew/bin/npm",
+    "emmet.showExpandedAbbreviation": "inMarkupAndStylesheetFilesOnly",
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.snippetSuggestions": "top",
+    "typescript.check.npmIsInstalled": false,
+    "csharp.suppressDotnetInstallWarning": true,
+    "gitlens.advanced.messages": {
+        "suppressCommitHasNoPreviousCommitWarning": false,
+        "suppressCommitNotFoundWarning": false,
+        "suppressFileNotUnderSourceControlWarning": false,
+        "suppressGitVersionWarning": false,
+        "suppressLineUncommittedWarning": false,
+        "suppressNoRepositoryWarning": false,
+        "suppressResultsExplorerNotice": true,
+        "suppressShowKeyBindingsNotice": true,
+        "suppressUpdateNotice": true,
+        "suppressWelcomeNotice": false
+    },
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDelete": false,
+    "workbench.startupEditor": "newUntitledFile",
+    "gitlens.keymap": "chorded",
+    "gitlens.codeLens.scopes": [
+        "document"
+    ],
+    "gitlens.hovers.currentLine.over": "line",
+    "gitlens.currentLine.enabled": false,
+    "gitlens.blame.highlight.locations": [
+        "gutter",
+        "line",
+        "overview"
+    ],
+    "gitlens.heatmap.toggleMode": "window",
+    "gitlens.hovers.currentLine.enabled": false,
+    "gitlens.codeLens.enabled": false,
+    "editor.tabSize": 2,
+    "zenMode.hideTabs": false,
+    "gitlens.showWhatsNewAfterUpgrades": false,
+    "bracketPairColorizer.independentPairColors": [
+        [
+            "()",
+            [
+                "LightGray",
+                "Gold",
+                "Orchid",
+                "LightSkyBlue"
+            ],
+            "Red"
+        ],
+        [
+            "[]",
+            [
+                "LightGray",
+                "Gold",
+                "Orchid",
+                "LightSkyBlue"
+            ],
+            "Red"
+        ],
+        [
+            "{}",
+            [
+                "LightGray",
+                "Gold",
+                "Orchid",
+                "LightSkyBlue"
+            ],
+            "Red"
+        ]
+    ],
+    "bracketPairColorizer.consecutivePairColors": [
+        "()",
+        "[]",
+        "{}",
+        [
+            "LightGray",
+            "Gold",
+            "Orchid",
+            "LightSkyBlue"
+        ],
+        "Red"
+    ],
+    "gitlens.views.repositories.enabled": false,
+    "gitlens.views.fileHistory.enabled": false,
+    "gitlens.views.lineHistory.enabled": false,
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
 }
