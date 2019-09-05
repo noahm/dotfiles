@@ -51,49 +51,11 @@
     "editor.tabSize": 2,
     "zenMode.hideTabs": false,
     "gitlens.showWhatsNewAfterUpgrades": false,
-    "bracketPairColorizer.independentPairColors": [
-        [
-            "()",
-            [
-                "LightGray",
-                "Gold",
-                "Orchid",
-                "LightSkyBlue"
-            ],
-            "Red"
-        ],
-        [
-            "[]",
-            [
-                "LightGray",
-                "Gold",
-                "Orchid",
-                "LightSkyBlue"
-            ],
-            "Red"
-        ],
-        [
-            "{}",
-            [
-                "LightGray",
-                "Gold",
-                "Orchid",
-                "LightSkyBlue"
-            ],
-            "Red"
-        ]
-    ],
-    "bracketPairColorizer.consecutivePairColors": [
-        "()",
-        "[]",
-        "{}",
-        [
-            "LightGray",
-            "Gold",
-            "Orchid",
-            "LightSkyBlue"
-        ],
-        "Red"
+    "bracket-pair-colorizer-2.colors": [
+        "LightGray",
+        "Gold",
+        "Orchid",
+        "LightSkyBlue"
     ],
     "gitlens.views.repositories.enabled": false,
     "gitlens.views.fileHistory.enabled": false,
