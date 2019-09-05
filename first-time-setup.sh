@@ -35,10 +35,18 @@ brew cask install google-chrome
 brew cask install twitch
 brew cask install charles
 brew cask install obs
+brew cask install keybase
 
-# TODO copy these files to the appropriate places in the filesystem
-cat ~/.dotfiles/Preferences.sublime-settings | pbcopy 
-# open sublime, paste in preferences
+# Setup key signing with keybase + gpg, follow:
+# https://github.com/pstadler/keybase-gpg-github
+brew install gpg # slow!
+keybase login
+keybase pgp export | gpg --import
+keybase pgp export --secret | gpg --allow-secret-key-import --import
+brew cask install gpg-suite
+
+# fix subpixel rendering in vs code + mojave
+defaults write com.microsoft.VSCode.helper CGFontRenderingFontSmoothingDisabled -bool NO
 
 cat ~/.dotfiles/vscode-settings.json | pbcopy
 # open vscode, paste in settings
