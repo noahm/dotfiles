@@ -44,6 +44,9 @@ keybase login
 keybase pgp export | gpg --import
 keybase pgp export --secret | gpg --allow-secret-key-import --import
 brew cask install gpg-suite
+brew install pinentry-mac
+# add to ~/.gnupg/gpg-agent.conf
+echo "pinentry-program /Users/nmannesc/.homebrew/bin/pinentry-mac" >> ~/.gnupg/gpg-agent.conf
 
 # fix subpixel rendering in vs code + mojave
 defaults write com.microsoft.VSCode.helper CGFontRenderingFontSmoothingDisabled -bool NO
