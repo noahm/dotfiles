@@ -1,6 +1,6 @@
 # install X-code command line tools to make git available first
 cd ~
-
+xcode-select --install
 sudo xcodebuild -license
 
 git clone https://github.com/Homebrew/brew.git .homebrew
@@ -22,8 +22,8 @@ ln -s .dotfiles/tmux.conf .tmux.conf
 ln -s .dotfiles/gitignore .gitignore
 ln -s .dotfiles/gitconfig .gitconfig
 
-brew install bash-completion git tmux
-brew tap caskroom/fonts
+brew install bash-completion git tmux svn
+brew tap homebrew/cask-fonts
 brew cask install font-source-code-pro
 
 # Update terminal preferences with font and window size (170x35)
@@ -32,7 +32,6 @@ brew cask install visual-studio-code
 brew cask install sublime-text
 brew cask install slack
 brew cask install google-chrome
-brew cask install twitch
 brew cask install charles
 brew cask install obs
 brew cask install keybase
@@ -55,4 +54,3 @@ cat ~/.dotfiles/vscode-settings.json | pbcopy
 # open vscode, paste in settings
 
 # TODO automate installation of package control in sublime and preferred packages?
-# TODO automate installation of favorite VS Code extensions?

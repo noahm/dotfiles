@@ -1,24 +1,24 @@
-PATH="$(python -c "from sys import prefix; print prefix")/bin:$HOME/.homebrew/bin:$HOME/.homebrew/sbin:$HOME/.pear/bin:$PATH"
-#export PATH="/usr/local/sbin:$HOME/.pear/bin:/usr/local/lib/node_modules:$PATH"
+PATH="$(python -c "from sys import prefix; print prefix")/bin:$HOME/.homebrew/bin:$HOME/.homebrew/sbin:$HOME/.pear/bin:$HOME/.toolbox/bin:$HOME/.bin:$PATH"
 export EDITOR='code -w'
 export GIT_EDITOR='code -nw'
 export LESSEDIT='mate -l %lm %f'
 export NODE_PATH='/Users/noah/.homebrew/lib/node_modules'
 
-export JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Home"
-
-### For development ###
-export PHP_ENV=development
+[ -s /usr/libexec/java_home ] && export JAVA_HOME=$(/usr/libexec/java_home)
 
 ### For keybase ###
 export GPG_TTY=$(tty)
 
-if [ -f "${HOME}/.bash_aliases" ]; then
-  source "${HOME}/.bash_aliases"
-fi
+[ -f "${HOME}/.bash_aliases" ] && source "${HOME}/.bash_aliases"
 
 ### Auto completion support ###
 source $HOME/.homebrew/etc/bash_completion
+
+export NVM_DIR="$HOME/.nvm"
+# Load nvm
+[ -s "${HOME}/.homebrew/opt/nvm/nvm.sh" ] && . "${HOME}/.homebrew/opt/nvm/nvm.sh"
+# Load nvm bash_completion
+[ -s "${HOME}/.homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "${HOME}/.homebrew/opt/nvm/etc/bash_completion.d/nvm"
 
 ### convenience stuff ###
 

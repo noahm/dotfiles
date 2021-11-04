@@ -40,3 +40,10 @@
   default = simple
 [commit]
   gpgsign = true
+[pull]
+	rebase = false
+	ff = only
+[trim]
+	bases = main
+[init]
+	defaultBranch = main
