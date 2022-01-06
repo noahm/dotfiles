@@ -8,7 +8,6 @@ PATH="$HOME/.homebrew/bin:$PATH" # temp bootstrap for running homebrew ASAP
 
 # brew cask install firefox
 brew cask install 1password
-brew cask install dropbox
 
 # stop and log in to dropbox, get private key out of 1password and into ~/.ssh/
 # update homebrew repo remote to git@github.com:Homebrew/brew.git
@@ -21,8 +20,17 @@ ln -s .dotfiles/screenrc .screenrc
 ln -s .dotfiles/tmux.conf .tmux.conf
 ln -s .dotfiles/gitignore .gitignore
 ln -s .dotfiles/gitconfig .gitconfig
+ln -s .dotfiles/fish .config/fish
 
-brew install bash-completion git tmux svn
+# switch to fish shell
+brew install fish
+sudo cat "$HOME/.homebrew/bin/fish" >>/etc/shells
+sudo chsh -s $HOME/.homebrew/bin/fish
+
+brew install git nvm
+nvm install lts
+npm i -g npm yarn
+
 brew tap homebrew/cask-fonts
 brew cask install font-source-code-pro
 
