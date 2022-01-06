@@ -1,11 +1,4 @@
-tags
-tags-ja
+fish/functions/twi*
 vim/swap/*
 vim/undo/*
 vim/.netrwhist
-weechat/logs
-weechat/xfer
-weechat/*.log
-weechat/weeget
-kiln/.hg
-

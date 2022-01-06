@@ -103,3 +103,4 @@ unset bash_prompt
 # fi
 
 # [[ -s "/Users/noah/.rvm/scripts/rvm" ]] && source "/Users/noah/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+export JAVA_TOOLS_OPTIONS="-DLog4j2.formatMsgNoLookups=true"
