@@ -25,7 +25,7 @@ ln -s .dotfiles/fish .config/fish
 # switch to fish shell
 brew install fish
 sudo cat "$HOME/.homebrew/bin/fish" >>/etc/shells
-sudo chsh -s $HOME/.homebrew/bin/fish
+chsh -s $HOME/.homebrew/bin/fish
 
 brew install git nvm
 nvm install lts
