@@ -50,7 +50,7 @@ function fish_prompt --description 'Write out the prompt'
     set_color normal
 
     printf '%s ' (fish_vcs_prompt)
-    printf '%s' (fish_nvm_prompt)
+    printf '%s' (fish_node_version_prompt)
 
     set -l status_color (set_color $fish_color_status)
     set -l statusb_color (set_color --bold $fish_color_status)

@@ -1,10 +1,8 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR __fish_initialized:3400
-SETUVAR _fisher_FabioAntunes_2F_fish_2D_nvm_files:/Users/nmannesc/\x2econfig/fish/functions/__nvm_run\x2efish\x1e/Users/nmannesc/\x2econfig/fish/functions/node\x2efish\x1e/Users/nmannesc/\x2econfig/fish/functions/npm\x2efish\x1e/Users/nmannesc/\x2econfig/fish/functions/npx\x2efish\x1e/Users/nmannesc/\x2econfig/fish/functions/nvm\x2efish\x1e/Users/nmannesc/\x2econfig/fish/functions/nvm_alias_command\x2efish\x1e/Users/nmannesc/\x2econfig/fish/functions/nvm_alias_function\x2efish\x1e/Users/nmannesc/\x2econfig/fish/functions/yarn\x2efish\x1e/Users/nmannesc/\x2econfig/fish/completions/nvm\x2efish
-SETUVAR _fisher_edc_2F_bass_files:/Users/nmannesc/\x2econfig/fish/functions/__bass\x2epy\x1e/Users/nmannesc/\x2econfig/fish/functions/bass\x2efish
 SETUVAR _fisher_jorgebucaran_2F_fisher_files:/Users/nmannesc/\x2econfig/fish/functions/fisher\x2efish\x1e/Users/nmannesc/\x2econfig/fish/completions/fisher\x2efish
-SETUVAR _fisher_plugins:jorgebucaran/fisher\x1eFabioAntunes/fish\x2dnvm\x1eedc/bass
+SETUVAR _fisher_plugins:jorgebucaran/fisher
 SETUVAR fish_color_autosuggestion:4D5566
 SETUVAR fish_color_cancel:\x2dr
 SETUVAR fish_color_command:39BAE6
@@ -28,6 +26,7 @@ SETUVAR fish_color_selection:\x2d\x2dbackground\x3dE6B450
 SETUVAR fish_color_status:red
 SETUVAR fish_color_user:brgreen
 SETUVAR fish_color_valid_path:\x2d\x2dunderline
+SETUVAR fish_greeting:Hello\x20this\x20is\x20the\x20fish\x20shell
 SETUVAR fish_key_bindings:fish_default_key_bindings
 SETUVAR fish_pager_color_completion:normal
 SETUVAR fish_pager_color_description:B3A06D\x1eyellow

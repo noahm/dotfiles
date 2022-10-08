@@ -7,19 +7,25 @@ __add_to_path $HOME/.homebrew/sbin
 __add_to_path $HOME/.pear/bin
 __add_to_path $HOME/.toolbox/bin
 __add_to_path $HOME/.bin
+__add_to_path $HOME/.deta/bin
 
-set EDITOR 'code -w'
-set GIT_EDITOR 'code -nw'
-set LESSEDIT 'mate -l %lm %f'
-set NODE_PATH '/Users/nmannesc/.homebrew/lib/node_modules'
+set -gx EDITOR 'code -w'
+set -gx GIT_EDITOR 'code -nw'
+set -gx LESSEDIT 'mate -l %lm %f'
+set -gx NODE_PATH '/Users/nmannesc/.homebrew/lib/node_modules'
 
-set GPG_TTY (tty)
+set -gx GPG_TTY (tty)
 
-set NVM_DIR "$HOME/.nvm"
-
-set JAVA_TOOLS_OPTIONS "-DLog4j2.formatMsgNoLookups=true"
+set -gx JAVA_TOOLS_OPTIONS "-DLog4j2.formatMsgNoLookups=true"
 
 if test -x /usr/libexec/java_home
-    set JAVA_HOME (/usr/libexec/java_home)
+    set -gx JAVA_HOME (/usr/libexec/java_home)
 end
 
+if which brew >/dev/null
+    source (brew --prefix asdf)/libexec/asdf.fish
+else if test -f ~/.asdf/asdf.fish
+    source ~/.asdf/asdf.fish
+end
+
+starship init fish | source

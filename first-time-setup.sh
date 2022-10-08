@@ -27,6 +27,12 @@ brew install fish
 sudo cat "$HOME/.homebrew/bin/fish" >>/etc/shells
 chsh -s $HOME/.homebrew/bin/fish
 
+# download and install nerdfont version of SCP
+# https://github.com/ryanoasis/nerd-fonts/releases
+
+# install starship shell framework
+curl -sS https://starship.rs/install.sh | BIN_DIR=~/.bin sh
+
 brew install git nvm
 nvm install lts
 npm i -g npm yarn
