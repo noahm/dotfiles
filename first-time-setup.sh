@@ -62,3 +62,15 @@ cat ~/.dotfiles/vscode-settings.json | pbcopy
 # open vscode, paste in settings
 
 # TODO automate installation of package control in sublime and preferred packages?
+
+# Solve weird TTY issues with gpg:
+#Add this to ~/.gnupg/gpg.conf:
+"
+use-agent
+pinentry-mode loopback
+"
+# And add this to ~/.gnupg/gpg-agent.conf
+"allow-loopback-pinentry"
+
+# Then restart the agent with
+echo RELOADAGENT | gpg-connect-agent
