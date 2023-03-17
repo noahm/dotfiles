@@ -14,6 +14,9 @@ brew cask install 1password
 
 git clone git@github.com:noahm/dotfiles.git .dotfiles
 
+mkdir .config
+mkdir .bin
+
 ln -s .dotfiles/inputrc .inputrc
 ln -s .dotfiles/profile .profile
 ln -s .dotfiles/screenrc .screenrc
@@ -24,7 +27,8 @@ ln -s .dotfiles/fish .config/fish
 
 # switch to fish shell
 brew install fish
-sudo cat "$HOME/.homebrew/bin/fish" >>/etc/shells
+echo "$HOME/.homebrew/bin/fish" | pbcopy
+sudo nano /etc/shells # paste on new line, save, quit (cat to file doesn't work with sudo?)
 chsh -s $HOME/.homebrew/bin/fish
 
 # download and install nerdfont version of SCP
@@ -33,22 +37,16 @@ chsh -s $HOME/.homebrew/bin/fish
 # install starship shell framework
 curl -sS https://starship.rs/install.sh | BIN_DIR=~/.bin sh
 
-brew install git nvm
-nvm install lts
-npm i -g npm yarn
-
-brew tap homebrew/cask-fonts
-brew cask install font-source-code-pro
+brew install git asdf
+asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 
 # Update terminal preferences with font and window size (170x35)
 
-brew cask install visual-studio-code
-brew cask install sublime-text
-brew cask install slack
-brew cask install google-chrome
-brew cask install charles
-brew cask install obs
-brew cask install keybase
+brew install --cask install visual-studio-code
+brew install --cask 1password/tap/1password-cli
+brew install --cask install charles
+brew install --cask install obs
+brew install --cask install keybase # then launch gui once to have cli auto-installed
 
 # Setup key signing with keybase + gpg, follow:
 # https://github.com/pstadler/keybase-gpg-github
@@ -56,18 +54,13 @@ brew install gpg # slow!
 keybase login
 keybase pgp export | gpg --import
 keybase pgp export --secret | gpg --allow-secret-key-import --import
-brew cask install gpg-suite
+# brew install --cask gpg-suite
 brew install pinentry-mac
 # add to ~/.gnupg/gpg-agent.conf
 echo "pinentry-program /Users/nmannesc/.homebrew/bin/pinentry-mac" >> ~/.gnupg/gpg-agent.conf
 
 # fix subpixel rendering in vs code + mojave
-defaults write com.microsoft.VSCode.helper CGFontRenderingFontSmoothingDisabled -bool NO
-
-cat ~/.dotfiles/vscode-settings.json | pbcopy
-# open vscode, paste in settings
-
-# TODO automate installation of package control in sublime and preferred packages?
+# defaults write com.microsoft.VSCode.helper CGFontRenderingFontSmoothingDisabled -bool NO
 
 # Solve weird TTY issues with gpg:
 #Add this to ~/.gnupg/gpg.conf:

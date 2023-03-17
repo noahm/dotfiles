@@ -16,16 +16,15 @@ set -gx NODE_PATH '/Users/nmannesc/.homebrew/lib/node_modules'
 
 set -gx GPG_TTY (tty)
 
-set -gx JAVA_TOOLS_OPTIONS "-DLog4j2.formatMsgNoLookups=true"
-
-if test -x /usr/libexec/java_home
+if test -x /usr/libexec/java_home and /usr/libexec/java_home 2>/dev/null
     set -gx JAVA_HOME (/usr/libexec/java_home)
+    set -gx JAVA_TOOLS_OPTIONS "-DLog4j2.formatMsgNoLookups=true"
 end
 
-if which brew >/dev/null
-    source (brew --prefix asdf)/libexec/asdf.fish
-else if test -f ~/.asdf/asdf.fish
+if test -f ~/.asdf/asdf.fish
     source ~/.asdf/asdf.fish
+else if which brew >/dev/null
+    source (brew --prefix asdf)/libexec/asdf.fish
 end
 
 starship init fish | source

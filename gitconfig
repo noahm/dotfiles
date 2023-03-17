@@ -35,8 +35,8 @@
 [help]
   autocorrect = 1
 [http]
-  sslCAPath = ~/.gitcerts/
-	sslCAinfo = /etc/ssl/certs/ca-certificates.crt
+# sslCAPath = ~/.gitcerts/
+# sslCAinfo = /etc/ssl/certs/ca-certificates.crt
 [push]
   default = simple
 [commit]
