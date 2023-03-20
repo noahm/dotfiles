@@ -3,6 +3,13 @@ cd ~
 xcode-select --install
 sudo xcodebuild -license
 
+# gen new key (within midway spec), with passphrase!
+ssh-keygen -t ecdsa -C "comment on key"
+# add the following to ~/.ssh/config to save passphrase in keychain!
+# Host *
+#  AddKeysToAgent yes
+#  UseKeychain yes
+
 git clone https://github.com/Homebrew/brew.git .homebrew
 PATH="$HOME/.homebrew/bin:$PATH" # temp bootstrap for running homebrew ASAP
 
@@ -54,7 +61,6 @@ brew install gpg # slow!
 keybase login
 keybase pgp export | gpg --import
 keybase pgp export --secret | gpg --allow-secret-key-import --import
-# brew install --cask gpg-suite
 brew install pinentry-mac
 # add to ~/.gnupg/gpg-agent.conf
 echo "pinentry-program /Users/nmannesc/.homebrew/bin/pinentry-mac" >> ~/.gnupg/gpg-agent.conf
