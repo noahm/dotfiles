@@ -16,9 +16,11 @@
   lg = log --graph --pretty=format:'%Cred%h%Creset %C(cyan dim)%G?%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
   unstage = reset HEAD --
   last-log = log --pretty -n1
+  dag = log --graph --format='format:%C(yellow)%h%C(reset) %C(blue)%an <%ae>%C(reset) %C(magenta)%cr%C(reset)%C(auto)%d%C(reset)%n%s' --date-order
 [core]
   whitespace = trailing-space,space-before-tab,-blank-at-eof
   excludesfile = ~/.gitignore
+  pager = less -FMRiX
 [apply]
   whitespace= fix
 [clean]
@@ -42,9 +44,9 @@
 [commit]
   gpgsign = true
 [pull]
-	rebase = false
-	ff = only
+  rebase = false
+  ff = only
 [trim]
-	bases = main
+  bases = main
 [init]
-	defaultBranch = main
+  defaultBranch = main

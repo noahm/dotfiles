@@ -31,6 +31,8 @@ ln -s .dotfiles/tmux.conf .tmux.conf
 ln -s .dotfiles/gitignore .gitignore
 ln -s .dotfiles/gitconfig .gitconfig
 ln -s .dotfiles/fish .config/fish
+ln -s .dotfiles/asdfrc ~/.asdfrc
+ln -s .dotfiles/default-npm-packages ~/.default-npm-packages
 
 # switch to fish shell
 brew install fish
@@ -79,3 +81,9 @@ pinentry-mode loopback
 
 # Then restart the agent with
 echo RELOADAGENT | gpg-connect-agent
+
+# setup amazon tools: toolbox, then: ada cr brazilcli
+
+# really nice util for keeping git repos tidy:
+brew install rust
+cargo install git-trim
