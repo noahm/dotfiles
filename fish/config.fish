@@ -7,7 +7,6 @@ __add_to_path $HOME/.homebrew/sbin
 __add_to_path $HOME/.pear/bin
 __add_to_path $HOME/.toolbox/bin
 __add_to_path $HOME/.bin
-__add_to_path $HOME/.deta/bin
 __add_to_path $HOME/.toolbox/bin
 __add_to_path $HOME/.cargo/bin
 
@@ -26,11 +25,8 @@ if test -x /usr/libexec/java_home and /usr/libexec/java_home 2>/dev/null
     set -gx JAVA_TOOLS_OPTIONS "-DLog4j2.formatMsgNoLookups=true"
 end
 
-if test -f ~/.asdf/asdf.fish
-    source ~/.asdf/asdf.fish
-else if which brew >/dev/null
-    source (brew --prefix asdf)/libexec/asdf.fish
+if which rtx >/dev/null
+  rtx activate fish | source
 end
-set -gx ASDF_NODEJS_LEGACY_FILE_DYNAMIC_STRATEGY latest_installed
 
 starship init fish | source

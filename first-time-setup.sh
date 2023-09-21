@@ -31,7 +31,6 @@ ln -s .dotfiles/tmux.conf .tmux.conf
 ln -s .dotfiles/gitignore .gitignore
 ln -s .dotfiles/gitconfig .gitconfig
 ln -s .dotfiles/fish .config/fish
-ln -s .dotfiles/asdfrc ~/.asdfrc
 ln -s .dotfiles/default-npm-packages ~/.default-npm-packages
 
 # switch to fish shell
@@ -46,8 +45,7 @@ chsh -s $HOME/.homebrew/bin/fish
 # install starship shell framework
 curl -sS https://starship.rs/install.sh | BIN_DIR=~/.bin sh
 
-brew install git asdf
-asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+brew install git rtx
 
 # Update terminal preferences with font and window size (170x35)
 
