@@ -2,21 +2,35 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
-__add_to_path $HOME/.homebrew/bin
-__add_to_path $HOME/.homebrew/sbin
-__add_to_path $HOME/.pear/bin
-__add_to_path $HOME/.toolbox/bin
-__add_to_path $HOME/.bin
-__add_to_path $HOME/.toolbox/bin
-__add_to_path $HOME/.cargo/bin
+fish_add_path $HOME/.homebrew/bin
+fish_add_path $HOME/.homebrew/sbin
+fish_add_path $HOME/.pear/bin
+fish_add_path $HOME/.toolbox/bin
+fish_add_path $HOME/.bin
+fish_add_path $HOME/.cargo/bin
+fish_add_path $HOME/.deta/bin
+fish_add_path $HOME/.fly/bin
+
+# pnpm
+if test -d ~/.local/share/pnpm
+    set -gx PNPM_HOME "~/.local/share/pnpm"
+    fish_add_path $PNPM_HOME
+end
+# pnpm end
 
 # bun
-set --export BUN_INSTALL "$HOME/.bun"
-__add_to_path $BUN_INSTALL/bin
+if test -d ~/.bun
+    set --export BUN_INSTALL "$HOME/.bun"
+    fish_add_path $BUN_INSTALL/bin
+end
 
 set -gx EDITOR 'code -w'
 set -gx GIT_EDITOR 'code -nw'
 set -gx LESSEDIT 'mate -l %lm %f'
+
+# if test -d ~/.homebrew/lib/node_modules
+#     set -gx NODE_PATH ~/.homebrew/lib/node_modules
+# end
 
 set -gx GPG_TTY (tty)
 
