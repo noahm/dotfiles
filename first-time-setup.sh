@@ -33,6 +33,12 @@ ln -s .dotfiles/gitconfig .gitconfig
 ln -s .dotfiles/fish .config/fish
 ln -s .dotfiles/default-npm-packages ~/.default-npm-packages
 
+# WSL for windows:
+ln -s .dotfiles/start-ssh-agent-proxy
+sudo apt install socat
+# In core windows
+choco install npiperelay
+
 # switch to fish shell
 brew install fish
 echo "$HOME/.homebrew/bin/fish" | pbcopy
@@ -55,7 +61,7 @@ brew install --cask install charles
 brew install --cask install obs
 brew install --cask install keybase # then launch gui once to have cli auto-installed
 
-# Setup key signing with keybase + gpg, follow:
+# Optional, setup key signing with keybase + gpg, follow:
 # https://github.com/pstadler/keybase-gpg-github
 brew install gpg # slow!
 keybase login

@@ -32,6 +32,11 @@ set -gx LESSEDIT 'mate -l %lm %f'
 #     set -gx NODE_PATH ~/.homebrew/lib/node_modules
 # end
 
+if test -x ~/.bin/start-ssh-agent-proxy
+    start-ssh-agent-proxy
+    set -gx SSH_AUTH_SOCK ~/.1password/agent.sock
+end
+
 set -gx GPG_TTY (tty)
 
 if test -x /usr/libexec/java_home and /usr/libexec/java_home 2>/dev/null

@@ -1,7 +1,7 @@
 [user]
   name = Noah Manneschmidt
   email = noah@manneschmidt.net
-  signingkey = noah@manneschmidt.net
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINokB34Jdwu1wD8fxFeaYhctssWeBhv3D3GtC1IrXsnw
 [color]
   ui = auto
 [alias]
@@ -50,3 +50,10 @@
   bases = main
 [init]
   defaultBranch = main
+
+# configure SSH key signing
+[gpg]
+  format = ssh
+[gpg "ssh"]
+  program = "/mnt/c/Users/Admin/AppData/Local/1Password/app/8/op-ssh-sign.exe"
+  allowedSignersFile = /home/noah/.ssh/allowed_signers
