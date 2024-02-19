@@ -6,6 +6,7 @@ fish_add_path $HOME/.homebrew/bin
 fish_add_path $HOME/.homebrew/sbin
 fish_add_path $HOME/.pear/bin
 fish_add_path $HOME/.toolbox/bin
+fish_add_path $HOME/.local/bin
 fish_add_path $HOME/.bin
 fish_add_path $HOME/.cargo/bin
 fish_add_path $HOME/.deta/bin
@@ -44,8 +45,8 @@ if test -x /usr/libexec/java_home and /usr/libexec/java_home 2>/dev/null
     set -gx JAVA_TOOLS_OPTIONS "-DLog4j2.formatMsgNoLookups=true"
 end
 
-if which rtx >/dev/null
-  rtx activate fish | source
+if which mise >/dev/null
+  mise activate fish | source
 end
 
 starship init fish | source
