@@ -1,7 +1,3 @@
-if status is-interactive
-    # Commands to run in interactive sessions can go here
-end
-
 fish_add_path $HOME/.homebrew/bin
 fish_add_path $HOME/.homebrew/sbin
 fish_add_path $HOME/.pear/bin
@@ -46,7 +42,12 @@ if test -x /usr/libexec/java_home and /usr/libexec/java_home 2>/dev/null
 end
 
 if which mise >/dev/null
-  mise activate fish | source
+    if status is-interactive
+        mise activate fish | source
+    else
+        # shims work better for non-interactive shells, helping cases like vscode debugging
+        mise activate --shims fish | source
+    end
 end
 
 starship init fish | source
