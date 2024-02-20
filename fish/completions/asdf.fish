@@ -1,1 +1,0 @@
-/home/noah/.asdf/completions/asdf.fish
