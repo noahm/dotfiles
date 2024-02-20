@@ -50,6 +50,8 @@
   bases = main
 [init]
   defaultBranch = main
+[diff]
+  algorithm = histogram
 
 # configure SSH key signing
 [gpg]
@@ -64,5 +66,5 @@
 ; file read after this file is read, as seen in this example)
 [includeIf "gitdir:~/dev/twitch/"]
   path = ~/.dotfiles/gitconfig-twitch
-[diff]
-	algorithm = histogram
+[includeIf "gitdir:~/dev/brazil/"]
+  path = ~/.dotfiles/gitconfig-brazil
