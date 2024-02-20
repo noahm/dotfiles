@@ -56,4 +56,13 @@
   format = ssh
 [gpg "ssh"]
   program = "/mnt/c/Users/Admin/AppData/Local/1Password/app/8/op-ssh-sign.exe"
-  allowedSignersFile = /home/noah/.ssh/allowed_signers
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+  allowedSignersFile = ~/.ssh/allowed_signers
+
+; include only if a remote with the given URL exists (note
+; that such a URL may be provided later in a file or in a
+; file read after this file is read, as seen in this example)
+[includeIf "gitdir:~/dev/twitch/"]
+  path = ~/.dotfiles/gitconfig-twitch
+[diff]
+	algorithm = histogram
